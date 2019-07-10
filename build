@@ -5,7 +5,8 @@ pwd
 ls -l
 echo "CLONE ..."
 git clone https://github.com/Subtalime/go-evepraisal.git . 
-export GO111MODULE=on ENV=prod 
+grep orders_universe ./esi/fetcher.go
+export GO111MODULE=on ENV=dev
 echo "SETUP ..."
 make setup 
 
@@ -18,7 +19,7 @@ echo "DONE..."
 mkdir /evepraisal/ 
 mv $GOPATH/bin/evepraisal /evepraisal/evepraisal 
 # if we RM, we can't /bin/bash
-# rm -rf $GOPATH 
+rm -rf $GOPATH 
 #apk del build-dependencies 
 mkdir /evepraisal/db
 cd /evepraisal

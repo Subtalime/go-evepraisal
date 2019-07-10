@@ -16,7 +16,7 @@ import (
 	// Imported to register boltdb with bleve
 	_ "github.com/blevesearch/bleve/index/store/boltdb"
 	"github.com/boltdb/bolt"
-	"github.com/subtalime/go-evepraisal/typedb"
+	"github.com/evepraisal/go-evepraisal/typedb"
 	"github.com/golang/snappy"
 )
 
