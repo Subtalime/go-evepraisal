@@ -34,7 +34,11 @@ var SpecialRegions = []struct {
 	stations []int64
 	systems  []int64
 }{
-	{
+        {
+                //
+                name:     "1dq1-a",
+                stations: []int64{30004759},
+        }, {
 		// 10000002
 		name:    "jita",
 		systems: []int64{30000142},
