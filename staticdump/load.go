@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/evepraisal/go-evepraisal/typedb"
+	"github.com/subtalime/go-evepraisal/typedb"
 	"github.com/sethgrid/pester"
 )
 

@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/evepraisal/go-evepraisal"
+	"github.com/subtalime/go-evepraisal"
 	"github.com/sethgrid/pester"
 )
 
@@ -36,12 +36,12 @@ var SpecialRegions = []struct {
 }{
         {
                 // 10000060
-                name:     "1dq1-a",
+                name:     "1dq1a",
                 stations: []int64{30004759},
         }, {
 		// 10000002
 		name:    "jita",
-		systems: []int64{30000142},
+		systems:  []int64{30000142},
 	}, {
 		// 10000043
 		name:     "amarr",
@@ -143,13 +143,13 @@ func (p *PriceFetcher) runOnce() {
 
 		// Use the universe price if our regional price is too low (override CCP's price)
 		for typeID, p := range priceMap[regionName] {
-			if p.Sell.Volume < 2 {
-				universePrice, ok := priceMap["universe"][typeID]
-				if ok && universePrice.Sell.Volume >= 2 {
-					universePrice.Strategy = "orders_universe"
-					priceMap[regionName][typeID] = universePrice
-				}
-			}
+//			if p.Sell.Volume < 2 {
+//				universePrice, ok := priceMap["universe"][typeID]
+//				if ok && universePrice.Sell.Volume >= 2 {
+//					universePrice.Strategy = "orders_universe"
+//					priceMap[regionName][typeID] = universePrice
+//				}
+//			}
 
 			if regionName != "universe" && p.Buy.Volume > 0 && p.Sell.Volume > 0 && p.Buy.Max > p.Sell.Min {
 				delta := p.Buy.Max - p.Sell.Min
