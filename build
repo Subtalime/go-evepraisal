@@ -1,29 +1,41 @@
 #!/bin/bash
 
-cd $GOPATH/src/github.com/subtalime/go-evepraisal
-pwd
-ls -l
+cd $GOPATH/src/github.com/evepraisal/go-evepraisal
 echo "CLONE ..."
+if [ -f build ]; then
+    rm -Rf *
+fi
 git clone https://github.com/Subtalime/go-evepraisal.git . 
-grep orders_universe ./esi/fetcher.go
+
 export GO111MODULE=on ENV=dev
 echo "SETUP ..."
 make setup 
 
 echo "BUILD ..."
 make build 
+if [ ! -f $GOPATH/bin/evepraisal ]; then
+    echo "BUILD failed!"
+    exit -1
+fi
 echo "INSTALL ..."
 make install 
+if [ ! -f $GOPATH/bin/evepraisal ]; then
+    echo "INSTALL failed!"
+    exit -1
+fi
 
-echo "DONE..."
+echo "MOVE BINARIES ..."
+if [ -d /evepraisal ]; then
+    rm -Rf /evepraisal
+fi
 mkdir /evepraisal/ 
 mv $GOPATH/bin/evepraisal /evepraisal/evepraisal 
 # if we RM, we can't /bin/bash
-rm -rf $GOPATH 
+# rm -rf $GOPATH
 #apk del build-dependencies 
 mkdir /evepraisal/db
 cd /evepraisal
-echo "Which BASH?"
+echo "WHICH BASH?"
 which bash
 echo "Start Eve-Praisal"
 ./evepraisal
