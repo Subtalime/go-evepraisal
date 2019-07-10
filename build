@@ -6,8 +6,8 @@ ls -l
 echo "CLONE ..."
 git clone https://github.com/Subtalime/go-evepraisal.git . 
 export GO111MODULE=on ENV=prod 
-#echo "SETUP ..."
-#make setup 
+echo "SETUP ..."
+make setup 
 
 echo "BUILD ..."
 make build 
