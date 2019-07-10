@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/boltdb/bolt"
-	"github.com/subtalime/go-evepraisal"
+	"github.com/evepraisal/go-evepraisal"
 	"github.com/golang/snappy"
 )
 

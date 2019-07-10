@@ -4,8 +4,8 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/subtalime/go-evepraisal/parsers"
-	"github.com/subtalime/go-evepraisal/typedb"
+	"github.com/evepraisal/go-evepraisal/parsers"
+	"github.com/evepraisal/go-evepraisal/typedb"
 	newrelic "github.com/newrelic/go-agent"
 )
 
