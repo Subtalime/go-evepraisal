@@ -19,10 +19,12 @@ mkdir /evepraisal/
 mv $GOPATH/bin/evepraisal /evepraisal/evepraisal 
 # if we RM, we can't /bin/bash
 # rm -rf $GOPATH 
-apk del build-dependencies 
+#apk del build-dependencies 
 mkdir /evepraisal/db
 cd /evepraisal
+echo "Which BASH?"
 which bash
+echo "Start Eve-Praisal"
 ./evepraisal
 
 #WORKDIR /evepraisal/
