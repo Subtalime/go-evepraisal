@@ -36,12 +36,12 @@ var SpecialRegions = []struct {
 }{
         {
                 // 10000060
-                name:     "1dq1-a",
+                name:     "1dq1a",
                 stations: []int64{30004759},
         }, {
 		// 10000002
 		name:    "jita",
-		systems: []int64{30000142},
+		systems:  []int64{30000142},
 	}, {
 		// 10000043
 		name:     "amarr",

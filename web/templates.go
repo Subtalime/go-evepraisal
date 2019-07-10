@@ -46,7 +46,7 @@ type namedThing struct {
 }
 
 var selectableMarkets = []namedThing{
-	{Name: "1dq1-a", DisplayName: "Goons"},
+	{Name: "1dq1a", DisplayName: "Goons"},
 	{Name: "jita", DisplayName: "Jita"},
 	{Name: "universe", DisplayName: "Universe"},
 	{Name: "amarr", DisplayName: "Amarr"},
@@ -100,7 +100,7 @@ func (ctx *Context) renderWithRoot(r *http.Request, w http.ResponseWriter, templ
 		}
 	} else {
 		root.UI.Path = r.URL.Path
-		root.UI.SelectedMarket = ctx.getSessionValueWithDefault(r, "market", "1dq1-a")
+		root.UI.SelectedMarket = ctx.getSessionValueWithDefault(r, "market", "1dq1a")
 		root.UI.Markets = selectableMarkets
 		root.UI.SelectedVisibility = ctx.getSessionValueWithDefault(r, "visibility", "public")
 		root.UI.Visibilities = selectableVisibilities
