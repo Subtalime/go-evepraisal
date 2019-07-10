@@ -100,7 +100,7 @@ func (ctx *Context) renderWithRoot(r *http.Request, w http.ResponseWriter, templ
 		}
 	} else {
 		root.UI.Path = r.URL.Path
-		root.UI.SelectedMarket = ctx.getSessionValueWithDefault(r, "market", "jita")
+		root.UI.SelectedMarket = ctx.getSessionValueWithDefault(r, "market", "1dq1-a")
 		root.UI.Markets = selectableMarkets
 		root.UI.SelectedVisibility = ctx.getSessionValueWithDefault(r, "visibility", "public")
 		root.UI.Visibilities = selectableVisibilities
