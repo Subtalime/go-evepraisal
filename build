@@ -5,7 +5,7 @@ echo "CLONE ..."
 if [ -f build ]; then
     rm -Rf *
 fi
-git clone https://github.com/Subtalime/go-evepraisal.git . 
+git clone --branch store_db https://github.com/Subtalime/go-evepraisal.git . 
 
 export GO111MODULE=on ENV=dev
 echo "SETUP ..."
@@ -25,15 +25,16 @@ if [ ! -f $GOPATH/bin/evepraisal ]; then
 fi
 
 echo "MOVE BINARIES ..."
-if [ -d /evepraisal ]; then
-    rm -Rf /evepraisal
+if [ ! -d /evepraisal ]; then
+    mkdir /evepraisal
 fi
-mkdir /evepraisal/ 
 mv $GOPATH/bin/evepraisal /evepraisal/evepraisal 
 # if we RM, we can't /bin/bash
 # rm -rf $GOPATH
 #apk del build-dependencies 
-mkdir /evepraisal/db
+if [ ! -d /evepraisal/db ]; then
+    mkdir /evepraisal/db
+fi
 cd /evepraisal
 echo "WHICH BASH?"
 which bash
